@@ -1,0 +1,18 @@
+This Stellar Database is made based on inputs from the ISDB (http://www.stellar-database.com/roll-your-own.html).  I took the isdb.mdb file and moved all of the data into an Excel XLS file, then rewrote many of the SQL queries as Excel functions.
+
+NOTE: Writing complex data lookups/searching/linking using Excel is very inefficient, and results in multiple headaches.  But, I was on a long flight, and was bored, and thought it'd be fun to see how far Excel functions have advanced since I used them 15 years ago.
+
+NOTE: Excel functions have not advanced in 15 years.
+
+Anywho, there are three JSON files that have different sets of data:
+stars_all.json.js has 2800 stars in it, arranged in distance order and containing multiple fields like Galactic XYZ Position, Mass, Diameter, Color.
+stars_1k.json.js has 1000 stars, but less data columns.
+stars_named.json.js has 778 stars in it based on stars that seem to have actual names.
+
+The Excel has two columns in the first sheet that auto-build the JSON strings, this should make it easy to export in different orders if desired.
+
+It's very difficult to adequately guess the star colors, as these aren't recorded in web RGB formats, and weren't in a useful dataset that I could find.  I used formulae based on: http://outreach.atnf.csiro.au/education/senior/astrophysics/photometry_colour.html and other sources to try to guess the closest colors.
+
+Galactic Alignment is calculated as X,Y,Z coordinates from doing a matrix rotation around the Local Stellar coordinates (which are calcluated from taking the Right Ascension and Declination based on solar coordinates and multiplying by distance).  That basically means that these might be off by a large amount - so please don't plan any NASA trips from these numbers.
+
+If you would like to see these rendered in HTML5 (optimized for mobile devices), you can see them at: http://wecreategames.com/apps/StarPad/
